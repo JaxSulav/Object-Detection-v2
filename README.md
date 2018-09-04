@@ -1,1 +1,5 @@
 # Object-Detection-v2
+
+Training a dataset on faster_rcnn_inception_v2_coco as implementation of a tensorflow model for multiple object detection purpose The labeled dataset of about 300 images were fetched and trained using faster_rcnn_inception_v2_coco model through a pretty decent GPU (local machine) i.e Nvidia GTX 1050. The training time was about 3-4 hours. Training with this faster_rcnn_inception_v2_coco was fast but the output live camera feed was laggy and slower than the previously trained ssd_mobilenet_v1_coco model. So, a concept of threading can be useful for a bit improvement in performance. Tensorflow 1.8 version of API is used as a machine learning model.
+
+There were a total of 64402 steps of training and the trained instances were saved as a checkpoints and the last checkpoint was used to freeze and generate a frozen_inference_graph.pb file using export_inference_graph.py. The frozen_inference_graph.pb file contains the object detection classifier which is implemented in live webcam feed using OpenCV.
